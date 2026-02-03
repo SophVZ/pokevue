@@ -66,8 +66,9 @@ export class Pokemon {
         const listaMovimientos=this.moves.slice(0, 4).map(m=>m.move.name);
         return `${listaMovimientos.join(', ')}.`
     }
-    reproducirGrito(){
+    reproducirGrito(volumen=0.1){
         const audio = new Audio(this.sonido);
+        audio.volume=volumen;
         audio.play().catch(error=>{
             console.log("Error al reproducir el grito:", error.message);
         })

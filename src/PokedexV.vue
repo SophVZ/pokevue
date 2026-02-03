@@ -57,7 +57,7 @@
 
   const hacerGrito=()=>{
     if (pokemon.value){
-      pokemon.value.reproducirGrito()
+      pokemon.value.reproducirGrito(0.1)
     }
   }
 </script>
