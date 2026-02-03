@@ -37,15 +37,18 @@ id Number Número de la Pokédex-->
     import Pokemon from '../models/clase-pokemon.js'
     import {onMounted} from 'vue';
 
-    const props = defineProps({
+    defineProps({
         pokemon: {type: Pokemon, required: true},
         name: {type: String, required: true},
         image: {type: String, required: true},
         types: {type: Array, required: true},
         id: {type: Number, required: true}
     })
+
+    const emit=defineEmits(['pokemon-listo'])
+
     onMounted(()=>{
-        props.pokemon.reproducirGrito();
+        emit('pokemon-listo');
     })
 </script>
 
