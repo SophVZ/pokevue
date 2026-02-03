@@ -24,6 +24,7 @@
         :image="pokemon.imagen"
         :types="pokemon.tipos"
         :pokemon="pokemon"
+        @pokemon-listo="hacerGrito"
       />
     </div>
   </div>
@@ -51,6 +52,12 @@
       console.error(err)
     } finally {
       loading.value=false
+    }
+  }
+
+  const hacerGrito=()=>{
+    if (pokemon.value){
+      pokemon.value.reproducirGrito()
     }
   }
 </script>
